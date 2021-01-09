@@ -4,6 +4,10 @@ A simple yet fully customizable drawer with animations for flutter.
 
 ![Black Technology LinkedIn Banner (1)](https://user-images.githubusercontent.com/38032118/104093143-65287400-52aa-11eb-8392-ebed28bf7200.gif)
 
+## Screenshots
+![Untitled_design-removebg-preview](https://user-images.githubusercontent.com/38032118/95982281-5d873980-0e39-11eb-8415-dcd963c38fca.png)<br />
+![4igeoh](https://user-images.githubusercontent.com/38032118/95981858-c7531380-0e38-11eb-8ec7-7eb1ba81654a.gif)
+
 ## Salient Features
 - Set speed of animations.
 - Set coordinates of X-Axis and Y-Axis to which widget will translate.
