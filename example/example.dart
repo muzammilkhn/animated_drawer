@@ -9,7 +9,14 @@ class DemoApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: AnimatedDrawer(
+        home:Home());
+  }
+}
+
+class Home extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return  AnimatedDrawer(
       shadowColor: Color(0xFF4c41a3),
       backgroundGradient: LinearGradient(
         colors: [Color(0xFF4c41a3), Color(0xFF1f186f)],
@@ -90,6 +97,6 @@ class DemoApp extends StatelessWidget {
           ),
         ),
       ),
-    ));
+    );
   }
 }
