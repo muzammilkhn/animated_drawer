@@ -2,10 +2,10 @@ import 'package:animated_drawer/bloc/generic_bloc.dart';
 import 'package:animated_drawer/constants/runtime_variables.dart';
 import 'package:animated_drawer/views/first_layer.dart';
 import 'package:animated_drawer/views/shadow.dart';
-import 'package:animated_drawer/views/third_layer.dart';
 import 'package:flutter/material.dart';
 
 import 'home_page.dart';
+import 'third_layer.dart';
 
 class AnimatedDrawer extends StatefulWidget {
   ///Gradient for First Layer background color.
@@ -53,12 +53,18 @@ class AnimatedDrawer extends StatefulWidget {
   ///Time Duration value of Home Page Animation
   ///
   ///If [homePageSpeed] argument is null, widget will use predined values.
-  final double homePageSpeed;
+  final int homePageSpeed;
 
   ///Time Duration value of Second Page Animation
   ///
   ///If [shadowSpeed] argument is null, widget will use predined values.
-  final double shadowSpeed;
+  final int shadowSpeed;
+
+  ///[openIcon] is the [Icon] or [Image] which is displayed when the Darwer is closed. If [openIcon] argument is null, Icon(Icons.menu) will be used.
+  final Widget openIcon;
+
+  ///[closeIcon] is the [Icon] or [Image] which is displayed when the Darwer is opened. If [closeIcon] argument is null, Icon(Icons.arrow_back_ios) will be used.
+  final Widget closeIcon;
 
   ///A widget to make Animated Drawer with translating X-Axis, Y-Axis and Angle Coordinates.
   ///
@@ -74,6 +80,8 @@ class AnimatedDrawer extends StatefulWidget {
       @required this.menuPageContent,
       @required this.homePageContent,
       @required this.shadowColor,
+      this.openIcon,
+      this.closeIcon,
       this.homePageXValue,
       this.homePageYValue,
       this.homePageAngle,
@@ -92,15 +100,17 @@ class _AnimatedDrawerState extends State<AnimatedDrawer> {
   Widget build(BuildContext context) {
     GenericBLOC().initSize(context);
     RuntimeVariables().runTimeSetValues(
-        widget.homePageXValue,
-        widget.homePageYValue,
-        widget.homePageAngle,
-        widget.shadowXValue,
-        widget.shadowXValue,
-        widget.shadowXValue,
-        widget.homePageSpeed,
-        widget.shadowSpeed,
-        widget.backgroundGradient);
+        backgroundGradient: widget.backgroundGradient,
+        homeX: widget.homePageXValue,
+        homeY: widget.homePageYValue,
+        homeAngle: widget.homePageAngle,
+        homePageSpeed: widget.homePageSpeed,
+        shadowX: widget.shadowXValue,
+        shadowY: widget.shadowYValue,
+        shadowAngle: widget.shadowAngle,
+        shadowSpeed: widget.shadowSpeed,
+        closeIcon: widget.closeIcon,
+        openIcon: widget.openIcon);
 
     return Scaffold(body: _body());
   }

@@ -12,6 +12,6 @@ class ThirdLayer extends StatelessWidget {
         height: Constants.height,
         width: Constants.height,
         color: Colors.transparent,
-        child: menu);
+        child: menu ?? Container());
   }
 }

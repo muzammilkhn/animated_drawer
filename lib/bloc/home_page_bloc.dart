@@ -15,15 +15,12 @@ class HomePageBloc {
   void openDrawer() {
     isOpen = true;
 
-    xoffSet = RuntimeVariables.homePageXUserInput == null
-        ? Constants.HOME_SCREEN_X_OFFSET_END
-        : RuntimeVariables.homePageXUserInput;
-    yoffSet = RuntimeVariables.homePageXUserInput == null
-        ? Constants.HOME_SCREEN_Y_OFFSET_END
-        : RuntimeVariables.homePageXUserInput;
-    angle = RuntimeVariables.homePageAngleUserInput == null
-        ? Constants.HOME_SCREEN_ANGLE_END
-        : RuntimeVariables.homePageAngleUserInput;
+    xoffSet = RuntimeVariables.homePageXUserInput ??
+        Constants.HOME_SCREEN_X_OFFSET_END;
+    yoffSet = RuntimeVariables.homePageYUserInput ??
+        Constants.HOME_SCREEN_Y_OFFSET_END;
+    angle = RuntimeVariables.homePageAngleUserInput ??
+        Constants.HOME_SCREEN_ANGLE_END;
   }
 
 // This function will start animation of close drawer of HomePage Widget

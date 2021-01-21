@@ -11,15 +11,11 @@ class ShadowBLOC {
 // This function will be called when ever the button is pressed to open drawer and assign values to Shadow animatedContainer.
 
   void openDrawer() {
-    xoffSet = RuntimeVariables.shadowXUserInput == null
-        ? Constants.SHADOW_X_OFFSET_END
-        : RuntimeVariables.shadowXUserInput;
-    yoffSet = RuntimeVariables.shadowYUserInput == null
-        ? Constants.SHADOW_Y_OFFSET_END
-        : RuntimeVariables.shadowYUserInput;
-    angle = RuntimeVariables.shadowAngleUserInput == null
-        ? Constants.SHADOW_ANGLE_END
-        : RuntimeVariables.shadowAngleUserInput;
+    xoffSet =
+        RuntimeVariables.shadowXUserInput ?? Constants.SHADOW_X_OFFSET_END;
+    yoffSet =
+        RuntimeVariables.shadowYUserInput ?? Constants.SHADOW_Y_OFFSET_END;
+    angle = RuntimeVariables.shadowAngleUserInput ?? Constants.SHADOW_ANGLE_END;
   }
 
 // This function will be called when ever the button is pressed to close drawer and assign values to Shadow animatedContainer.

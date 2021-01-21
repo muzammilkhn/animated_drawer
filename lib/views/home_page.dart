@@ -22,9 +22,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         transform: GenericBLOC.changeValues(
             HomePageBloc.xoffSet, HomePageBloc.yoffSet, HomePageBloc.angle),
         duration: GenericBLOC.setDuration(
-            RuntimeVariables.homePageSpeedUserInput == null
-                ? Constants.HOME_SCREEN_DURATION
-                : RuntimeVariables.homePageSpeedUserInput),
+            RuntimeVariables.homePageSpeedUserInput?? Constants.HOME_SCREEN_DURATION
+                ),
         child: ClipRRect(
           borderRadius: GenericBLOC.getBorderRadius(),
           child: Stack(
@@ -40,10 +39,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
   _openButton() {
     return IconButton(
-        icon: Icon(
-          Icons.menu,
-          color: Color(0xFF1f186f),
-        ),
+        icon: RuntimeVariables.openIconUserInput ?? Constants.DRAWER_OPEN_ICON,
         onPressed: () {
           HomePageBloc().openDrawer();
           ShadowBLOC().openDrawer();
@@ -55,7 +51,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
   _closeButton() {
     return IconButton(
-        icon: Icon(Icons.arrow_back_ios, color: Color(0xFF1f186f)),
+        icon:
+            RuntimeVariables.closeIconUserInput ?? Constants.DRAWER_CLOSE_ICON,
         onPressed: () {
           HomePageBloc().closeDrawer();
           ShadowBLOC().closeDrawer();

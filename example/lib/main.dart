@@ -8,15 +8,24 @@ void main() {
 class DemoApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home:Home());
+    return MaterialApp(home: Home());
   }
 }
 
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return  AnimatedDrawer(
+    return AnimatedDrawer(
+      homePageXValue: 150,
+      homePageYValue: 80,
+      homePageAngle: -0.2,
+      homePageSpeed: 250,
+      shadowXValue: 122,
+      shadowYValue: 110,
+      shadowAngle: -0.275,
+      shadowSpeed: 550,
+      openIcon: Icon(Icons.menu_open, color: Color(0xFF1f186f)),
+      closeIcon: Icon(Icons.arrow_back_ios, color: Color(0xFF1f186f)),
       shadowColor: Color(0xFF4c41a3),
       backgroundGradient: LinearGradient(
         colors: [Color(0xFF4c41a3), Color(0xFF1f186f)],
@@ -91,8 +100,8 @@ class Home extends StatelessWidget {
         height: MediaQuery.of(context).size.height,
         color: Colors.blue[200],
         child: Center(
-          child: Image.asset(
-            "assets/avatar.png",
+          child: Image.network(
+            "https://user-images.githubusercontent.com/38032118/105316779-2a480980-5be3-11eb-900e-18fcd599493d.png",
             height: MediaQuery.of(context).size.height / 2,
           ),
         ),

@@ -27,26 +27,36 @@ class RuntimeVariables {
 
   ///Time Duration value of HomeScreen Animation defined at runtime by user. This will be used if the user has passed it in the cosntructor. If user has not passed it in the constructor, than value from the constants is used.
 
-  static double homePageSpeedUserInput;
+  static int homePageSpeedUserInput;
 
   ///Time Duration value of Shadow Animation defined at runtime by user. This will be used if the user has passed it in the cosntructor. If user has not passed it in the constructor, than value from the constants is used.
 
-  static double shadowSpeedUserInput;
+  static int shadowSpeedUserInput;
 
   static LinearGradient backgroundGradientUserInput;
+
+  ///Icon Displayed when the drawer is in close state. This will be used if the user has passed it in the cosntructor. If user has not passed it in the constructor, than value from the constants is used.
+
+  static Widget openIconUserInput;
+
+  ///Icon Displayed when the drawer is in open state. This will be used if the user has passed it in the cosntructor. If user has not passed it in the constructor, than value from the constants is used.
+
+  static Widget closeIconUserInput;
 
   ///This function will assign values for all the arguments which are passed by user at runtime.F
 
   void runTimeSetValues(
-      double homeX,
+      {double homeX,
       double homeY,
       double homeAngle,
       double shadowX,
       double shadowY,
       double shadowAngle,
-      double homePageSpeed,
-      double shadowSpeed,
-      LinearGradient backgroundGradient) {
+      int homePageSpeed,
+      int shadowSpeed,
+      LinearGradient backgroundGradient,
+      Widget openIcon,
+      Widget closeIcon}) {
     homePageXUserInput = homeX;
     homePageYUserInput = homeY;
     homePageAngleUserInput = homeAngle;
@@ -57,6 +67,10 @@ class RuntimeVariables {
 
     homePageSpeedUserInput = homePageSpeed;
     shadowSpeedUserInput = shadowSpeed;
+
     backgroundGradientUserInput = backgroundGradient;
+
+    openIconUserInput = openIcon;
+    closeIconUserInput = closeIcon;
   }
 }

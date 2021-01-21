@@ -23,9 +23,7 @@ class ShadowState extends State<Shadow> {
         transform: GenericBLOC.changeValues(
             ShadowBLOC.xoffSet, ShadowBLOC.yoffSet, ShadowBLOC.angle),
         duration: GenericBLOC.setDuration(
-            RuntimeVariables.shadowSpeedUserInput == null
-                ? Constants.SHADOW_DURATION
-                : RuntimeVariables.shadowSpeedUserInput),
+            RuntimeVariables.shadowSpeedUserInput ?? Constants.SHADOW_DURATION),
         decoration:
             GenericBLOC.getDecoraton(widget.bgColor ?? Constants.SHADOW_COLOR),
         child: SafeArea(

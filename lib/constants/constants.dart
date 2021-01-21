@@ -82,4 +82,12 @@ class Constants {
   ///Color Constant for background of Drawer. This will be used if user will not enter his/her own values.
 
   static const Color SHADOW_COLOR = Color(0xFF4c41a3);
+
+  static const Icon DRAWER_OPEN_ICON = Icon(
+    Icons.menu,
+    color: Color(0xFF1f186f),
+  );
+
+  static const Icon DRAWER_CLOSE_ICON =
+      Icon(Icons.arrow_back_ios, color: Color(0xFF1f186f));
 }
