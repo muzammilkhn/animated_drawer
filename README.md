@@ -12,6 +12,7 @@ A simple yet fully customizable drawer with animations for flutter.
 - Set speed of animations.
 - Set coordinates of X-Axis and Y-Axis to which widget will translate.
 - Set Angle of rotation to which widget will rotate.
+- Set icon to be shown to open drawer and close drawer.
 - Supports gradient colors.
 - Support full customization of widgets
 - Any type of widget can be passed in  HomePageContent and MenuPageContent.
@@ -113,3 +114,20 @@ AnimatedDrawer(
       ),
     );
 ```
+## Animated Drawer Parameters
+|Parameter Name|Description|Data Type|Default Value|
+|:-------------|:----------|:--------|:------------|
+|`homePageContent`|*Widget which will show data on Home Page.*|Widget|required|
+|`menuPageContent`|*Widget which will show data on Menu Page, when the drawer is opened.*|Widget|required|
+|`backgroundGradient`|*Background colors of the drawer*|Gradient|required|
+|`shadowColor`|*Shadow color of the HomePage. Shadow is the widget which is behind HomePage and is animated with it*|Color|required|
+|`openIcon`|*Icon displayed to open the drawer (It can accept Icon, Image.asset and Image.network*|Widget|Icon(Icons.menu, color: Color(0xFF1f186f));|
+|`closeIcon`|*Icon displayed to open the drawer (It can accept Icon, Image.asset and Image.network*|Widget|Icon(Icons.arrow_back_ios, color: Color(0xFF1f186f));|
+|`homePageXValue`|*X-Cordinate Value to which Home Page Widget will translate in animation.*|double|150.0|
+|`homePageYValue`|*Y-Cordinate Value to which Home Page Widget will translate in animation.*|double|80.0|
+|`homePageAngle`|*Angle Value to which Home Page Widget will rotate in animation.*|double|-0.2|
+|`shadowXValue`|*X-Cordinate Value to which Shadow Widget will translate in animation.*|double|122.0|
+|`shadowYValue`|*Y-Cordinate Value to which Shadow Widget will translate in animation.*|double|110.0|
+|`shadowAngle`|*Angle Value to which Shadow Widget will rotate in animation.*|double|-0.275|
+|`homePageSpeed`|*Time duration of Home Page Widget in milliseconds till which animation will play.*|int|250|
+|`shadowSpeed`|*Time duration of Shadow  Widget in milliseconds till which animation will play.*|int|550|
