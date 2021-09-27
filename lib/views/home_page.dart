@@ -7,9 +7,9 @@ import 'package:animated_drawer/views/shadow.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
-  final Widget body;
+  final Widget? body;
 
-  HomePage({@required this.body});
+  HomePage({required this.body});
 
   @override
   _HomePageState createState() => new _HomePageState();
@@ -20,15 +20,15 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return AnimatedContainer(
         transform: GenericBLOC.changeValues(
-            HomePageBloc.xoffSet, HomePageBloc.yoffSet, HomePageBloc.angle),
+            HomePageBloc.xOffSet, HomePageBloc.yOffSet, HomePageBloc.angle),
         duration: GenericBLOC.setDuration(
-            RuntimeVariables.homePageSpeedUserInput?? Constants.HOME_SCREEN_DURATION
-                ),
+            RuntimeVariables.homePageSpeedUserInput ??
+                Constants.HOME_SCREEN_DURATION),
         child: ClipRRect(
           borderRadius: GenericBLOC.getBorderRadius(),
           child: Stack(
             children: [
-              widget.body ?? Container(),
+              widget.body ?? const SizedBox(),
               SafeArea(
                 child: HomePageBloc.isOpen ? _closeButton() : _openButton(),
               )
@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           ShadowBLOC().openDrawer();
 
           setState(() {});
-          shadowState.setState(() {});
+          shadowState?.setState(() {});
         });
   }
 
@@ -58,7 +58,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           ShadowBLOC().closeDrawer();
 
           setState(() {});
-          shadowState.setState(() {});
+          shadowState?.setState(() {});
         });
   }
 }
