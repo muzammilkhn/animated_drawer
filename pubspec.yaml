@@ -1,16 +1,15 @@
 name: animated_drawer
 description: A simple yet fully customizable drawer with animations for flutter.
-version: 0.0.3
+version: 1.0.0
 homepage: https://github.com/muzammilkhn/animated_drawer.git
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
-  flutter: ">=1.17.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  matrix4_transform: ^1.1.6
+  matrix4_transform: ^2.0.1
 
 dev_dependencies:
   flutter_test:

@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 class FirstLayer extends StatelessWidget {
-  final Gradient gradient;
+  final Gradient? gradient;
 
-  FirstLayer({@required this.gradient});
+  FirstLayer({required this.gradient});
 
   @override
   Widget build(BuildContext context) {

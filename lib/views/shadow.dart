@@ -4,12 +4,12 @@ import 'package:animated_drawer/constants/constants.dart';
 import 'package:animated_drawer/constants/runtime_variables.dart';
 import 'package:flutter/material.dart';
 
-ShadowState shadowState;
+ShadowState? shadowState;
 
 class Shadow extends StatefulWidget {
-  final Color bgColor;
+  final Color? bgColor;
 
-  Shadow({@required this.bgColor});
+  Shadow({required this.bgColor});
 
   @override
   ShadowState createState() => ShadowState();
@@ -21,11 +21,11 @@ class ShadowState extends State<Shadow> {
     shadowState = this;
     return AnimatedContainer(
         transform: GenericBLOC.changeValues(
-            ShadowBLOC.xoffSet, ShadowBLOC.yoffSet, ShadowBLOC.angle),
+            ShadowBLOC.xOffSet, ShadowBLOC.yOffSet, ShadowBLOC.angle),
         duration: GenericBLOC.setDuration(
             RuntimeVariables.shadowSpeedUserInput ?? Constants.SHADOW_DURATION),
         decoration:
-            GenericBLOC.getDecoraton(widget.bgColor ?? Constants.SHADOW_COLOR),
+            GenericBLOC.getDecoration(widget.bgColor ?? Constants.SHADOW_COLOR),
         child: SafeArea(
             child:
                 Container(width: Constants.width, height: Constants.height)));
